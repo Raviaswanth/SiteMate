@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="container">
+
+  <main>
+    <div class="jumbotron">
+      <h1>This is great</h1>
+      <p>Welcome to templating using EJS</p>
+      <ul>
+        <% task.Jira.forEach(function(jira) { %>
+          <li>
+            <strong>
+              <%= jira.id %>
+            </strong>
+            <%= jira.title %>,
+              <%= jira.description %>
+          </li>
+          <% }); %>
+      </ul>
+      <p>Add Data</p>
+      <form action="/jira" method="POST">
+
+        <!-- <input name="_method" type="hidden" value="PUT"> -->
+        <input type="text" placeholder="id" name="id" value="">
+        <input type="text" placeholder="title" name="title">
+        <input type="text" placeholder="description" name="description">
+
+
+        <button type="submit" id="order">Submit</button>
+
+      </form>
+
+
+    </div>
+  </main>
+
+
+
+</body>
+
+</html>
