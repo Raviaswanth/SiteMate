@@ -3,48 +3,48 @@
 
 <body class="container">
 
-  <main>
-    <div class="jumbotron">
-      <h1>This is great</h1>
-      <p>Welcome to templating using EJS</p>
-      <ul>
-        <% task.Jira.forEach(function(jira) { %>
-          <li>
-            <strong>
-              <%= jira.id %>
-            </strong>
-            <%= jira.title %>,
-              <%= jira.description %>
-          </li>
-          <% }); %>
-      </ul>
-      
+    <main>
+        <div class="jumbotron">
+            <h1>update and delete</h1>
 
-<p>update Data</p>
-      <form action="/jira/<%= jiraId %>" method="POST">
-
-       <input name="_method" type="hidden" value="PUT"> 
-        
-        <input type="text" placeholder="title" name="title">
-        <input type="text" placeholder="description" name="description">
+            <ul>
+                <% task.Jira.forEach(function(jira) { %>
+                    <li>
+                        <strong>
+                            <%= jira.id %>
+                        </strong>
+                        <%= jira.title %>,
+                            <%= jira.description %>
+                    </li>
+                    <% }); %>
+            </ul>
 
 
-        <button type="submit" id="order">Submit</button>
+            <p>update Data</p>
+            <form action="/jira/<%= jiraId %>" method="POST">
 
-      </form>
-<p>delete Data</p>
-      <form action="/jira-delete/<%= jiraId %>" method="POST">
+                <input name="_method" type="hidden" value="PUT">
 
-       <input name="_method" type="hidden" value="PUT"> 
-        
-        
+                <input type="text" placeholder="title" name="title">
+                <input type="text" placeholder="description" name="description">
 
 
-        <button type="submit" id="order">Submit</button>
+                <button type="submit" id="order">Submit</button>
 
-      </form>
-    </div>
-  </main>
+            </form>
+            <p>delete Data</p>
+            <form action="/jira-delete/<%= jiraId %>" method="POST">
+
+                <input name="_method" type="hidden" value="PUT">
+
+
+
+
+                <button type="submit" id="order">Submit</button>
+
+            </form>
+        </div>
+    </main>
 
 
 
